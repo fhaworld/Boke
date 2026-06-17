@@ -26,11 +26,11 @@ export type Favicon = {
 };
 
 export type SiteConfig = {
-	title: "技术嘉豪的博客";
-	subtitle:"豪气冲天";
+	title: string;
+	subtitle: string;
 	site_url: string;
-	description?: "希望以后小站能和我一起进化"; // 网站描述，用于生成 <meta name="description">
-	keywords?: ["JAVA", "后端","二次元","博客"]; // 站点关键词，用于生成 <meta name="keywords">
+	description?: string; // 网站描述，用于生成 <meta name="description">
+	keywords?: string[]; // 站点关键词，用于生成 <meta name="keywords">
 
 	lang: "en" | "zh_CN" | "zh_TW" | "ja" | "ru";
 
@@ -161,4 +161,105 @@ export type SiteConfig = {
 		 */
 		noReferrerDomains?: string[];
 	};
+};
+
+
+export const siteConfig: SiteConfig = {
+	// ---------- 基础信息 ----------
+	title: "技术人的博客",
+	subtitle: "昔日曾耽幻,一朝悟求真.",
+	site_url: "https://boke.fha-0819.workers.dev/",
+	description: "希望小站能和我一起成长",
+	keywords: ["JAVA", "后端", "博客"],
+	lang: "zh_CN",
+
+	// ---------- 主题色 ----------
+	themeColor: {
+		hue: 200,          // 色相 0-360
+		fixed: false,      // 是否固定（禁止用户切换）
+		// defaultMode: 'system'  // 可省略，默认跟随系统
+	},
+
+	// ---------- 卡片样式 ----------
+	card: {
+		border: true,      // 显示边框和阴影
+		followTheme: true, // 卡片风格跟随主题色
+	},
+
+	// ---------- 运行时间（可选） ----------
+	siteStartDate: '2026-03-01',
+	timezone: 'Asia/Shanghai',
+
+	// ---------- 网站图标 ----------
+	favicon: [
+		{ src: "/favicon.svg" },
+		// { src: "/favicon-dark.svg", theme: "dark" },
+	],
+
+	// ---------- 导航栏 ----------
+	navbar: {
+		// logo 可以不写，标题会显示站点 title
+		// logo: { type: "image", value: "/logo.svg", alt: "Logo" },
+		// title: "Firefly",          // 不写则使用顶部的 title
+		widthFull: false,
+		menuAlign: "left",
+		followTheme: false,
+		stickyNavbar: true,
+	},
+
+	// ---------- 页面开关 ----------
+	pages: {
+		friends: true,
+		sponsor: true,
+		guestbook: true,
+		bangumi: true,
+		gallery: true,
+	},
+
+	// ---------- 分类导航栏（可选） ----------
+	categoryBar: true,
+	//
+	// ---------- 归档折叠（可选） ----------
+	foldArticle: true,
+
+	// ---------- 文章列表布局 ----------
+	postListLayout: {
+		defaultMode: "list",      // "list" 或 "grid"
+		mobileDefaultMode: "list",
+		showTags: true,
+		descriptionLines: 2,
+		allowSwitch: true,
+		grid: {
+			masonry: false,
+			columnWidth: 320,
+		},
+	},
+
+	// ---------- 文章详情页 ----------
+	post: {
+		rehypeCallouts: {
+			theme: "github",
+		},
+		showLastModified: true,
+		outdatedThreshold: 90,    // 超过90天显示“上次编辑”
+		sharePoster: false,
+		generateOgImages: true,
+	},
+
+	// ---------- Bangumi（可选）----------
+	bangumi: {
+		userId: "xxx",
+		mode: "static",
+	},
+
+	// ---------- 分页 ----------
+	pagination: {
+		postsPerPage: 10,
+	},
+
+	// ---------- 图片优化（可选）----------
+	imageOptimization: {
+		formats: "both",
+		quality: 80,
+	},
 };
