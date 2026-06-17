@@ -26,11 +26,11 @@ export type Favicon = {
 };
 
 export type SiteConfig = {
-	title: string;
-	subtitle: string;
+	title: "技术嘉豪的博客";
+	subtitle:"豪气冲天";
 	site_url: string;
-	description?: string; // 网站描述，用于生成 <meta name="description">
-	keywords?: string[]; // 站点关键词，用于生成 <meta name="keywords">
+	description?: "希望以后小站能和我一起进化"; // 网站描述，用于生成 <meta name="description">
+	keywords?: ["JAVA", "后端","二次元","博客"]; // 站点关键词，用于生成 <meta name="keywords">
 
 	lang: "en" | "zh_CN" | "zh_TW" | "ja" | "ru";
 
